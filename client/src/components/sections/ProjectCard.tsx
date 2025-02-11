@@ -16,45 +16,74 @@ export default function ProjectCard({ title, description, tech, github, demo, in
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        delay: index * 0.1, 
+        duration: 0.5,
+        type: "spring",
+        stiffness: 100
+      }}
     >
-      <Card className="h-full hover:shadow-lg transition-shadow">
-        <CardHeader>
-          <CardTitle className="text-xl font-semibold">{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground mb-4">{description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {tech.map((item) => (
-              <span
-                key={item}
-                className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-          <div className="flex gap-2">
-            {github && (
-              <a href={github} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm">
-                  <Github className="h-4 w-4 mr-2" />
-                  Code
-                </Button>
-              </a>
-            )}
-            {demo && (
-              <a href={demo} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Demo
-                </Button>
-              </a>
-            )}
-          </div>
-        </CardContent>
-      </Card>
+      <motion.div
+        whileHover={{ y: -5 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <Card className="h-full hover:shadow-lg transition-all duration-300">
+          <CardHeader>
+            <CardTitle className="text-xl font-semibold">{title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground mb-4">{description}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {tech.map((item, i) => (
+                <motion.span
+                  key={item}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    delay: index * 0.1 + i * 0.05,
+                    duration: 0.2
+                  }}
+                  className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                >
+                  {item}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              {github && (
+                <motion.a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button variant="outline" size="sm">
+                    <Github className="h-4 w-4 mr-2" />
+                    Code
+                  </Button>
+                </motion.a>
+              )}
+              {demo && (
+                <motion.a
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button variant="outline" size="sm">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Demo
+                  </Button>
+                </motion.a>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
     </motion.div>
   );
 }

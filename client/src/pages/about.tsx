@@ -23,14 +23,25 @@ export default function About() {
               {experience.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="border-l-2 border-primary pl-4"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.2,
+                    type: "spring",
+                    stiffness: 100 
+                  }}
+                  className="border-l-2 border-primary pl-4 hover:border-l-4 transition-all"
                 >
-                  <h3 className="font-semibold">{item.role}</h3>
-                  <p className="text-sm text-muted-foreground">{item.company} • {item.period}</p>
-                  <p className="mt-2">{item.description}</p>
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <h3 className="font-semibold">{item.role}</h3>
+                    <p className="text-sm text-muted-foreground">{item.company} • {item.period}</p>
+                    <p className="mt-2">{item.description}</p>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -40,13 +51,24 @@ export default function About() {
               {education.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
-                  className="border-l-2 border-primary pl-4"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.2 + 0.3,
+                    type: "spring",
+                    stiffness: 100 
+                  }}
+                  className="border-l-2 border-primary pl-4 hover:border-l-4 transition-all"
                 >
-                  <h3 className="font-semibold">{item.degree}</h3>
-                  <p className="text-sm text-muted-foreground">{item.school} • {item.period}</p>
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <h3 className="font-semibold">{item.degree}</h3>
+                    <p className="text-sm text-muted-foreground">{item.school} • {item.period}</p>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
