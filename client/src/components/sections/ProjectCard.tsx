@@ -24,12 +24,18 @@ export default function ProjectCard({ title, description, tech, github, demo, in
         type: "spring",
         stiffness: 100
       }}
+      className="perspective-1000"
     >
       <motion.div
-        whileHover={{ y: -5 }}
-        transition={{ type: "spring", stiffness: 300 }}
+        whileHover={{ 
+          y: -10,
+          rotateY: 5,
+          scale: 1.02,
+          transition: { type: "spring", stiffness: 400, damping: 30 }
+        }}
+        className="transform-gpu"
       >
-        <Card className="h-full hover:shadow-lg transition-all duration-300">
+        <Card className="h-full hover:shadow-xl transition-all duration-300 backdrop-blur-sm bg-card/90">
           <CardHeader>
             <CardTitle className="text-xl font-semibold">{title}</CardTitle>
           </CardHeader>
@@ -45,7 +51,7 @@ export default function ProjectCard({ title, description, tech, github, demo, in
                     delay: index * 0.1 + i * 0.05,
                     duration: 0.2
                   }}
-                  className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                  className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary backdrop-blur-sm"
                 >
                   {item}
                 </motion.span>
@@ -60,7 +66,7 @@ export default function ProjectCard({ title, description, tech, github, demo, in
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="backdrop-blur-sm">
                     <Github className="h-4 w-4 mr-2" />
                     Code
                   </Button>
@@ -74,7 +80,7 @@ export default function ProjectCard({ title, description, tech, github, demo, in
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="backdrop-blur-sm">
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Demo
                   </Button>

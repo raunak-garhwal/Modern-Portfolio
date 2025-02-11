@@ -19,24 +19,30 @@ export default function About() {
             </p>
 
             <h2 className="text-2xl font-semibold mt-12 mb-4">Experience</h2>
-            <div className="space-y-6">
+            <div className="space-y-6 perspective-1000">
               {experience.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -50, rotateY: -10 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ 
-                    duration: 0.5, 
+                    duration: 0.8,
                     delay: index * 0.2,
                     type: "spring",
-                    stiffness: 100 
+                    stiffness: 70,
+                    damping: 20
                   }}
-                  className="border-l-2 border-primary pl-4 hover:border-l-4 transition-all"
+                  className="border-l-2 border-primary pl-4 hover:border-l-4 transition-all transform-gpu"
                 >
                   <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    whileHover={{ 
+                      x: 5,
+                      scale: 1.02,
+                      rotateY: 5,
+                      transition: { type: "spring", stiffness: 400, damping: 30 }
+                    }}
+                    className="p-4 rounded-lg bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
                   >
                     <h3 className="font-semibold">{item.role}</h3>
                     <p className="text-sm text-muted-foreground">{item.company} • {item.period}</p>
@@ -47,24 +53,30 @@ export default function About() {
             </div>
 
             <h2 className="text-2xl font-semibold mt-12 mb-4">Education</h2>
-            <div className="space-y-6">
+            <div className="space-y-6 perspective-1000">
               {education.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -50, rotateY: -10 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ 
-                    duration: 0.5, 
+                    duration: 0.8,
                     delay: index * 0.2 + 0.3,
                     type: "spring",
-                    stiffness: 100 
+                    stiffness: 70,
+                    damping: 20
                   }}
-                  className="border-l-2 border-primary pl-4 hover:border-l-4 transition-all"
+                  className="border-l-2 border-primary pl-4 hover:border-l-4 transition-all transform-gpu"
                 >
                   <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    whileHover={{ 
+                      x: 5,
+                      scale: 1.02,
+                      rotateY: 5,
+                      transition: { type: "spring", stiffness: 400, damping: 30 }
+                    }}
+                    className="p-4 rounded-lg bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
                   >
                     <h3 className="font-semibold">{item.degree}</h3>
                     <p className="text-sm text-muted-foreground">{item.school} • {item.period}</p>
