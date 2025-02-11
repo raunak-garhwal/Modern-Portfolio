@@ -1,4 +1,3 @@
-import Hero from "@/components/sections/Hero";
 import { motion } from "framer-motion";
 import {
   SiCplusplus,
@@ -9,11 +8,12 @@ import {
   SiJavascript,
   SiPython,
   SiOpenjdk,
-  SiVisualstudio,
+  SiVsco,
   SiPostman,
   SiGit,
   SiVercel
 } from "react-icons/si";
+import Hero from "@/components/sections/Hero";
 
 const skills = [
   { name: "MongoDB", icon: SiMongodb },
@@ -27,7 +27,7 @@ const skills = [
 ];
 
 const tools = [
-  { name: "VS Code", icon: SiVisualstudio },
+  { name: "VS Code", icon: SiVsco },
   { name: "Postman", icon: SiPostman },
   { name: "Git", icon: SiGit },
   { name: "Vercel", icon: SiVercel },
