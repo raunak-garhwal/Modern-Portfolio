@@ -28,9 +28,8 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 10,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 };
@@ -83,12 +82,27 @@ export default function Hero() {
           animate="visible"
           className="text-center"
         >
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl md:text-6xl font-bold tracking-tight"
-          >
-            Hi, I'm <span className="text-primary">Raunak Garhwal</span>
-          </motion.h1>
+          <div className="flex items-center justify-center gap-6 mb-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20"
+            >
+              <img
+                src="/attached_assets/Profile-Pic.png"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl md:text-6xl font-bold tracking-tight"
+            >
+              Hi, I'm <span className="text-primary">Raunak Garhwal</span>
+            </motion.h1>
+          </div>
+
           <motion.div
             variants={itemVariants}
             className="mt-6 text-xl text-muted-foreground h-8"
