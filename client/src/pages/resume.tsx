@@ -2,14 +2,30 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Resume() {
+  const { toast } = useToast();
+
   const handleDownload = () => {
-    // Replace with your actual resume file path
-    const link = document.createElement('a');
-    link.href = '/path-to-your-resume.pdf';
-    link.download = 'Raunak-Garhwal-Resume.pdf';
-    link.click();
+    // Once the PDF is uploaded, this will be the path to your resume
+    const resumePath = '/path-to-your-resume.pdf';
+
+    try {
+      const link = document.createElement('a');
+      link.href = resumePath;
+      link.download = 'Raunak-Garhwal-Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      toast({
+        title: "Download failed",
+        description: "The resume file is not available yet. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -30,48 +46,16 @@ export default function Resume() {
 
           <Card className="mb-8">
             <CardContent className="pt-6">
-              <h2 className="text-2xl font-semibold mb-4">Education</h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold">Master of Computer Applications (MCA)</h3>
-                  <p className="text-sm text-muted-foreground">University Name • 2023 - 2025</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Bachelor of Commerce (B.Com)</h3>
-                  <p className="text-sm text-muted-foreground">University Name • 2020 - 2023</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              <Alert>
+                <AlertDescription>
+                  The resume preview will be available once the PDF file is uploaded. 
+                  You can still download the resume using the button above.
+                </AlertDescription>
+              </Alert>
 
-          <Card className="mb-8">
-            <CardContent className="pt-6">
-              <h2 className="text-2xl font-semibold mb-4">Skills</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div className="space-y-2">
-                  <h3 className="font-semibold">Programming Languages</h3>
-                  <ul className="text-sm text-muted-foreground">
-                    <li>JavaScript (ES6+)</li>
-                    <li>TypeScript</li>
-                    <li>Python</li>
-                  </ul>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold">Frontend</h3>
-                  <ul className="text-sm text-muted-foreground">
-                    <li>React.js</li>
-                    <li>HTML5 & CSS3</li>
-                    <li>Tailwind CSS</li>
-                  </ul>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold">Tools & Technologies</h3>
-                  <ul className="text-sm text-muted-foreground">
-                    <li>Git & GitHub</li>
-                    <li>VS Code</li>
-                    <li>Node.js</li>
-                  </ul>
-                </div>
+              {/* PDF Preview Area - Will be populated once PDF is uploaded */}
+              <div className="mt-6 aspect-[8.5/11] bg-accent/5 rounded-lg flex items-center justify-center">
+                <p className="text-muted-foreground">Resume preview will appear here</p>
               </div>
             </CardContent>
           </Card>
