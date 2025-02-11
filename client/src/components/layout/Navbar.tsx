@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -8,12 +8,20 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
+  { name: "Resume", href: "/resume" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.classList.toggle("dark");
+  };
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,7 +32,7 @@ export default function Navbar() {
               Portfolio
             </Link>
           </div>
-          
+
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
@@ -40,6 +48,18 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="ml-4"
+            >
+              {theme === "light" ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </Button>
           </div>
 
           {/* Mobile menu */}
@@ -66,6 +86,24 @@ export default function Navbar() {
                       {item.name}
                     </Link>
                   ))}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={toggleTheme}
+                    className="flex items-center gap-2"
+                  >
+                    {theme === "light" ? (
+                      <>
+                        <Moon className="h-4 w-4" />
+                        Dark Mode
+                      </>
+                    ) : (
+                      <>
+                        <Sun className="h-4 w-4" />
+                        Light Mode
+                      </>
+                    )}
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
