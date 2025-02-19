@@ -8,7 +8,7 @@ function Footer() {
     { icon: FaGithub, href: 'https://github.com/raunak-garhwal', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://linkedin.com/in/raunak-garhwal', label: 'LinkedIn' },
     { icon: FaTelegram , href: 'https://t.me/raunak_garhwal', label: 'Telegram' },
-    { icon: BiLogoGmail, href: 'https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=lqrsljbfCqNFjjFXwztWCvFfczrKTjkMpgNbjlFcpZrrjxNNmwjNqXZBDVVnFcFWFBMswKSbpChRJKlDz', label: 'Email' },
+    { icon: BiLogoGmail, href: 'https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=raunakgarhwal2003@gmail.com', label: 'Email' },
     { icon: SiLeetcode, href: 'https://leetcode.com/u/Raunak_Garhwal', label: 'LeetCode' }
   ];
 
