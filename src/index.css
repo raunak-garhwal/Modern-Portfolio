@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #050b15;
+  color: #e6f1ff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.nav-link {
+  @apply px-4 py-2 text-slate-300 hover:text-teal-400 transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 right-0 bottom-0 h-[2px] bg-teal-400 transform scale-x-0 transition-transform duration-300;
+}
+
+.nav-link:hover::after {
+  @apply scale-x-100;
+}
+
+.nav-link.active {
+  @apply text-teal-400;
+}
+
+.nav-link.active::after {
+  @apply scale-x-100;
+}
+
+.section-heading {
+  @apply text-3xl font-bold text-teal-400 mb-8;
+}
+
+.skill-icon {
+  @apply text-4xl text-slate-300 hover:text-teal-400 transition-colors duration-300;
+}
+
+.project-card {
+  @apply bg-[#0a1628]/50 backdrop-blur-sm rounded-lg p-6 transition-all duration-300 border border-teal-900/50 hover:border-teal-700/50;
+}
+
+.contact-input {
+  @apply w-full bg-[#0a1628]/50 backdrop-blur-sm text-slate-300 border border-teal-900/50 rounded-lg p-3 focus:outline-none focus:border-teal-400 transition-colors duration-300;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050b15;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a1628;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #134e4a;
+}
