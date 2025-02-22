@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <motion.nav 
-      className="sticky top-0 bg-[#050b15]/90 backdrop-blur-sm z-50 py-4 border-b border-teal-900/50"
+      className="sticky top-0 font-bold bg-[#050b15]/90 backdrop-blur-sm z-50 py-4 border-b border-teal-900/50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
