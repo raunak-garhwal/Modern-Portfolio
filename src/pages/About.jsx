@@ -3,7 +3,6 @@ import { FaReact, FaNodeJs, FaPython, FaJava, FaGithub } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiJavascript, SiCplusplus, SiPostman, SiVercel } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
-
 function About() {
   const skills = [
     { name: "React", icon: FaReact },
@@ -41,10 +40,11 @@ function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="max-w-5xl mx-auto p-6"
+      className="max-w-5xl relative mx-auto p-6"
     >
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-transparent pointer-events-none rounded-xl" />
       {/* About Section */}
-      <h1 className="text-center section-heading">About Me</h1>
+      <h1 className="text-center section-heading pt-4">About Me</h1>
       <motion.p
         className="text-lg text-slate-300 mb-12"
         initial={{ y: 20 }}
@@ -53,8 +53,7 @@ function About() {
       >
         <div className="flex flex-col items-center justify-center">
           <p>
-            Hi Everyone, I am <span className="text-teal-300 font-semibold">Raunak Garhwal </span>
-            from <span className="purple"> Rajasthan, India.</span>
+            Hi Everyone, I am <span className="text-teal-300 font-semibold">Raunak Garhwal</span> from Rajasthan, India.
           </p>
           <p>
           Passionate software engineer with expertise in full-stack development.
@@ -86,7 +85,7 @@ function About() {
         
       {/* Skills Section */}
       <h2 className="text-2xl font-bold text-center text-teal-300 mb-6">Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-14 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-14 mb-16">
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
@@ -104,7 +103,7 @@ function About() {
 
       {/* Tools Section */}
       <h2 className="text-2xl text-center font-bold text-teal-300 mb-6">Tools</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-14">
         {tools.map((tool, index) => (
           <motion.div
             key={tool.name}

@@ -24,7 +24,7 @@ function Contact() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-transparent pointer-events-none rounded-2xl" />
       
-      <h1 className="section-heading">Contact Me</h1>
+      <h1 className="section-heading text-center">Contact Me</h1>
       <motion.form
         action="https://formspree.io/f/xjkgjpgl"
         method='POST'
