@@ -19,7 +19,7 @@ function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        Hi I'm <span className='text-teal-400'> RAUNAK GARHWAL</span>
+        Hi I'm <span className='text-teal-400'>RAUNAK GARHWAL</span>
       </motion.h1>
       
       <div className="relative">
