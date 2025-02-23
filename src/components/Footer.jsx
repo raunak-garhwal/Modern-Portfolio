@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTelegram , FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import { BiLogoGmail } from "react-icons/bi";
 import { SiLeetcode } from "react-icons/si";
 
