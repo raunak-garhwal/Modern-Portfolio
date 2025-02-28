@@ -34,7 +34,7 @@ function Contact() {
         transition={{ delay: 0.2 }}
       >
         <div>
-          <label htmlFor="name" className="block text-slate-300 mb-2">Name</label>
+          <label htmlFor="name" className="block text-slate-300 pl-2 mb-2">Name</label>
           <input
             type="text"
             id="name"
@@ -46,7 +46,7 @@ function Contact() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-slate-300 mb-2">Email</label>
+          <label htmlFor="email" className="block text-slate-300 pl-2 mb-2">Email</label>
           <input
             type="email"
             id="email"
@@ -58,7 +58,7 @@ function Contact() {
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-slate-300 mb-2">Message</label>
+          <label htmlFor="message" className="block text-slate-300 pl-2 mb-2">Message</label>
           <textarea
             id="message"
             name="message"
