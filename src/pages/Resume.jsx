@@ -14,7 +14,7 @@ function Resume() {
       <div className="flex justify-between items-center mb-2 px-6 relative">
         <h1 className="section-heading pt-4">Resume</h1>
         <motion.a
-          href="/resume.pdf"
+          href="/Raunak-Garhwal-resume.pdf"
           download
           className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors"
           whileHover={{ scale: 1.10 }}
