@@ -31,12 +31,12 @@ function Resume() {
         className="bg-[#0a1628]/50 backdrop-blur-sm p-4 rounded-lg border border-teal-900/50"
       >
         <object
-          data="/resume.pdf"
+          data="/Raunak-Garhwal-resume.pdf"
           type="application/pdf"
           className="w-full h-[1200px] rounded-xl"
           aria-label="Resume Preview"
         >
-          <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="/resume.pdf">Download PDF</a>.</p>
+          <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="/Raunak-Garhwal-resume.pdf">Download PDF</a>.</p>
         </object>
       </motion.div>
     </motion.div>
