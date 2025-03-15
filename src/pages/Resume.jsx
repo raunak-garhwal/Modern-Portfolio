@@ -28,12 +28,12 @@ function Resume() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="bg-[#0a1628]/50 backdrop-blur-sm p-4 rounded-lg border border-teal-900/50"
+        className="bg-transparent p-0 rounded-lg border-none flex justify-center items-center"
       >
         <object
-          data="/Raunak-Garhwal-resume.pdf"
+          data="/Raunak-Garhwal-resume.pdf#toolbar=0"
           type="application/pdf"
-          className="w-full h-[1200px] rounded-xl"
+          className="w-[785px] h-[1106px]"
           aria-label="Resume Preview"
         >
           <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="/Raunak-Garhwal-resume.pdf">Download PDF</a>.</p>
