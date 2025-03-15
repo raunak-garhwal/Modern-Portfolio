@@ -33,7 +33,7 @@ function Resume() {
         <object
           data="/Raunak-Garhwal-resume.pdf#toolbar=0"
           type="application/pdf"
-          className="w-[785px] h-[1106px]"
+          className="w-[780px] h-[1103px] z-10 m-4"
           aria-label="Resume Preview"
         >
           <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="/Raunak-Garhwal-resume.pdf">Download PDF</a>.</p>
